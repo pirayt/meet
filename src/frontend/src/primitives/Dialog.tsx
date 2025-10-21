@@ -54,8 +54,10 @@ const ModalContent = styled('div', {
     margin: 'auto',
     padding: '0',
     mdDown: {
-      maxWidth: '100vw',
-      maxHeight: '100vh',
+      width: '100%',
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column',
     },
   },
   variants: {
@@ -127,6 +129,10 @@ export const Dialog = ({
                   className={css({
                     mdDown: {
                       margin: '0',
+                      width: '100%',
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
                     },
                   })}
                 >
@@ -138,6 +144,10 @@ export const Dialog = ({
                       padding: '1.5rem',
                       mdDown: {
                         padding: '0.5rem',
+                        width: '100%',
+                        height: '100%',
+                        display: 'flex',
+                        flexDirection: 'column',
                       },
                     })}
                   >

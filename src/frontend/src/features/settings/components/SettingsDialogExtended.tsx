@@ -22,13 +22,14 @@ import { SettingsDialogExtendedKey } from '@/features/settings/type'
 
 const getTabsStyle = (isMobile: boolean) =>
   css({
-    height: isMobile ? 'calc(100vh - 1rem)' : '650px',
+    height: isMobile ? '100%' : '650px',
     width: '100%',
     maxWidth: isMobile ? '100%' : '800px',
     marginY: isMobile ? '0' : '-1rem',
     overflow: 'hidden',
     display: 'flex',
     flexDirection: 'row',
+    flexGrow: isMobile ? 1 : undefined,
   })
 
 const getTabListContainerStyle = (isMobile: boolean) =>

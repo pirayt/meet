@@ -54,8 +54,8 @@ const ModalContent = styled('div', {
     margin: 'auto',
     padding: '0',
     mdDown: {
-      maxWidth: 'calc(100vw - 1rem)',
-      maxHeight: 'calc(100vh - 1rem)',
+      maxWidth: '100vw',
+      maxHeight: '100vh',
     },
   },
   variants: {
@@ -126,7 +126,7 @@ export const Dialog = ({
                   pointerEvents="auto"
                   className={css({
                     mdDown: {
-                      margin: '0.5rem',
+                      margin: '0',
                     },
                   })}
                 >
@@ -137,7 +137,7 @@ export const Dialog = ({
                     className={css({
                       padding: '1.5rem',
                       mdDown: {
-                        padding: '1rem',
+                        padding: '0.5rem',
                       },
                     })}
                   >

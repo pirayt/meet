@@ -22,30 +22,32 @@ import { SettingsDialogExtendedKey } from '@/features/settings/type'
 
 const getTabsStyle = (isMobile: boolean) =>
   css({
-    height: isMobile ? 'calc(100vh - 4rem)' : '650px',
+    height: isMobile ? 'calc(100vh - 1rem)' : '650px',
     width: '100%',
     maxWidth: isMobile ? '100%' : '800px',
-    marginY: '-1rem',
+    marginY: isMobile ? '0' : '-1rem',
     overflow: 'hidden',
     display: 'flex',
     flexDirection: 'row',
   })
 
-const tabListContainerStyle = css({
-  display: 'flex',
-  flexDirection: 'column',
-  borderRight: '1px solid lightGray', // fixme poor color management
-  paddingY: '1rem',
-  paddingRight: '1.5rem',
-})
+const getTabListContainerStyle = (isMobile: boolean) =>
+  css({
+    display: 'flex',
+    flexDirection: 'column',
+    borderRight: '1px solid lightGray', // fixme poor color management
+    paddingY: isMobile ? '0.5rem' : '1rem',
+    paddingRight: isMobile ? '0.5rem' : '1.5rem',
+  })
 
-const tabPanelContainerStyle = css({
-  display: 'flex',
-  flexGrow: '1',
-  marginTop: '3.5rem',
-  minWidth: 0,
-  overflow: 'auto',
-})
+const getTabPanelContainerStyle = (isMobile: boolean, isWideScreen: boolean) =>
+  css({
+    display: 'flex',
+    flexGrow: '1',
+    marginTop: isWideScreen ? '3.5rem' : isMobile ? '0.5rem' : '3.5rem',
+    minWidth: 0,
+    overflow: 'auto',
+  })
 
 export type SettingsDialogExtended = Pick<
   DialogProps,
@@ -70,11 +72,15 @@ export const SettingsDialogExtended = (props: SettingsDialogExtended) => {
         defaultSelectedKey={props.defaultSelectedTab}
       >
         <div
-          className={tabListContainerStyle}
+          className={getTabListContainerStyle(isMobile)}
           style={{
             flex: isWideScreen ? '0 0 16rem' : '0 0 4rem',
-            paddingTop: !isWideScreen ? '64px' : undefined,
-            paddingRight: !isWideScreen ? '1rem' : undefined,
+            paddingTop: !isWideScreen
+              ? isMobile
+                ? '0.5rem'
+                : '64px'
+              : undefined,
+            paddingRight: !isWideScreen ? '0.5rem' : undefined,
           }}
         >
           {isWideScreen && (
@@ -106,7 +112,7 @@ export const SettingsDialogExtended = (props: SettingsDialogExtended) => {
             </Tab>
           </TabList>
         </div>
-        <div className={tabPanelContainerStyle}>
+        <div className={getTabPanelContainerStyle(isMobile, isWideScreen)}>
           <AccountTab
             id={SettingsDialogExtendedKey.ACCOUNT}
             onOpenChange={props.onOpenChange}

@@ -69,7 +69,8 @@ export const SettingsDialogExtended = (props: SettingsDialogExtended) => {
   const isMobile = !useMediaQuery('(min-width: 768px)')
 
   // Set default tab to ACCOUNT if not provided to prevent collapsed state
-  const defaultTab = props.defaultSelectedTab || SettingsDialogExtendedKey.ACCOUNT
+  const defaultTab =
+    props.defaultSelectedTab || SettingsDialogExtendedKey.ACCOUNT
 
   return (
     <Dialog innerRef={dialogEl} {...props} role="dialog" type="flex">

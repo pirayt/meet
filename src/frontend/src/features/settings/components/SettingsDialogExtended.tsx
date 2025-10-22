@@ -23,13 +23,16 @@ import { SettingsDialogExtendedKey } from '@/features/settings/type'
 const getTabsStyle = (isMobile: boolean) =>
   css({
     height: isMobile ? '100%' : '650px',
-    width: '100%',
+    width: isMobile ? '100%' : '800px',
+    minWidth: isMobile ? '100%' : '800px',
     maxWidth: isMobile ? '100%' : '800px',
+    minHeight: isMobile ? '100%' : '650px',
+    maxHeight: isMobile ? '100%' : '650px',
     marginY: isMobile ? '0' : '-1rem',
     overflow: 'hidden',
     display: 'flex',
     flexDirection: 'row',
-    flexGrow: isMobile ? 1 : undefined,
+    flexShrink: 0,
   })
 
 const getTabListContainerStyle = (isMobile: boolean) =>
@@ -65,12 +68,16 @@ export const SettingsDialogExtended = (props: SettingsDialogExtended) => {
   const isWideScreen = useMediaQuery('(min-width: 800px)') // fixme - hardcoded 50rem in pixel
   const isMobile = !useMediaQuery('(min-width: 768px)')
 
+  // Set default tab to ACCOUNT if not provided to prevent collapsed state
+  const defaultTab =
+    props.defaultSelectedTab || SettingsDialogExtendedKey.ACCOUNT
+
   return (
     <Dialog innerRef={dialogEl} {...props} role="dialog" type="flex">
       <Tabs
         orientation="vertical"
         className={getTabsStyle(isMobile)}
-        defaultSelectedKey={props.defaultSelectedTab}
+        defaultSelectedKey={defaultTab}
       >
         <div
           className={getTabListContainerStyle(isMobile)}

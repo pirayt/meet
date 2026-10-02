@@ -1,6 +1,12 @@
 // Map frontend language codes to backend language codes
 
-export type BackendLanguage = 'en-us' | 'fr-fr' | 'nl-nl' | 'de-de' | 'es-es' | 'ru-ru'
+export type BackendLanguage =
+  | 'en-us'
+  | 'fr-fr'
+  | 'nl-nl'
+  | 'de-de'
+  | 'es-es'
+  | 'ru-ru'
 export type FrontendLanguage = 'en' | 'fr' | 'nl' | 'de' | 'es' | 'ru'
 
 const frontendToBackendMap: Record<FrontendLanguage, BackendLanguage> = {

@@ -21,7 +21,7 @@ die() { echo "ABORT: $*" >&2; exit 1; }
 # --- Inventory -------------------------------------------------------------
 section "Jitsi / Prosody packages"
 PKGS=$(dpkg-query -W -f='${db:Status-Abbrev} ${Package}\n' 2>/dev/null \
-  | awk '$1 ~ /^[ir]i/ {print $2}' \
+  | awk '$1 ~ /^([ir]i|rc)/ {print $2}' \
   | grep -E '^(jitsi-|jicofo|jigasi|jibri|prosody|lua-prosody)' || true)
 echo "${PKGS:-(none)}"
 

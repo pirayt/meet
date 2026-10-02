@@ -27,30 +27,39 @@ import { SettingsDialogExtendedKey } from '@/features/settings/type'
 import { useIsAdminOrOwner } from '@/features/rooms/livekit/hooks/useIsAdminOrOwner'
 import { AccessibilityTab } from './tabs/AccessibilityTab'
 
-const tabsStyle = css({
-  maxHeight: '40.625rem', // fixme size copied from meet settings modal
-  width: '50rem', // fixme size copied from meet settings modal
-  marginY: '-1rem', // fixme hacky solution to cancel modal padding
-  maxWidth: '100%',
-  overflow: 'hidden',
-  height: 'calc(100vh - 2rem)',
-})
+const getTabsStyle = (isMobile: boolean) =>
+  css({
+    height: isMobile ? '100%' : '650px',
+    width: isMobile ? '100%' : '800px',
+    minWidth: isMobile ? '100%' : '800px',
+    maxWidth: isMobile ? '100%' : '800px',
+    minHeight: isMobile ? '100%' : '650px',
+    maxHeight: isMobile ? '100%' : '650px',
+    marginY: isMobile ? '0' : '-1rem',
+    overflow: 'hidden',
+    display: 'flex',
+    flexDirection: 'row',
+    flexShrink: 0,
+  })
 
-const tabListContainerStyle = css({
-  display: 'flex',
-  flexDirection: 'column',
-  borderRight: '1px solid lightGray', // fixme poor color management
-  paddingY: '1rem',
-  paddingLeft: '0.2rem',
-  paddingRight: '1.5rem',
-})
+const getTabListContainerStyle = (isMobile: boolean) =>
+  css({
+    display: 'flex',
+    flexDirection: 'column',
+    borderRight: '1px solid lightGray', // fixme poor color management
+    paddingY: isMobile ? '0.5rem' : '1rem',
+    paddingLeft: '0.2rem',
+    paddingRight: isMobile ? '0.5rem' : '1.5rem',
+  })
 
-const tabPanelContainerStyle = css({
-  display: 'flex',
-  flexGrow: '1',
-  marginTop: '3.5rem',
-  minWidth: 0,
-})
+const getTabPanelContainerStyle = (isMobile: boolean, isWideScreen: boolean) =>
+  css({
+    display: 'flex',
+    flexGrow: '1',
+    marginTop: isWideScreen ? '3.5rem' : isMobile ? '0.5rem' : '3.5rem',
+    minWidth: 0,
+    overflow: 'auto',
+  })
 
 export type SettingsDialogExtended = Pick<
   DialogProps,
@@ -65,6 +74,11 @@ export const SettingsDialogExtended = (props: SettingsDialogExtended) => {
 
   const dialogEl = useRef<HTMLDivElement>(null)
   const isWideScreen = useMediaQuery('(min-width: 800px)') // fixme - hardcoded 50rem in pixel
+  const isMobile = !useMediaQuery('(min-width: 768px)')
+
+  // Set default tab to ACCOUNT if not provided to prevent collapsed state
+  const defaultTab =
+    props.defaultSelectedTab || SettingsDialogExtendedKey.ACCOUNT
 
   const isAdminOrOwner = useIsAdminOrOwner()
 
@@ -72,15 +86,19 @@ export const SettingsDialogExtended = (props: SettingsDialogExtended) => {
     <Dialog innerRef={dialogEl} {...props} role="dialog" type="flex">
       <Tabs
         orientation="vertical"
-        className={tabsStyle}
-        defaultSelectedKey={props.defaultSelectedTab}
+        className={getTabsStyle(isMobile)}
+        defaultSelectedKey={defaultTab}
       >
         <div
-          className={tabListContainerStyle}
+          className={getTabListContainerStyle(isMobile)}
           style={{
-            flex: isWideScreen ? '0 0 16rem' : undefined,
-            paddingTop: !isWideScreen ? '64px' : undefined,
-            paddingRight: !isWideScreen ? '1rem' : undefined,
+            flex: isWideScreen ? '0 0 16rem' : '0 0 4rem',
+            paddingTop: !isWideScreen
+              ? isMobile
+                ? '0.5rem'
+                : '64px'
+              : undefined,
+            paddingRight: !isWideScreen ? '0.5rem' : undefined,
           }}
         >
           {isWideScreen && (
@@ -128,7 +146,7 @@ export const SettingsDialogExtended = (props: SettingsDialogExtended) => {
             </Tab>
           </TabList>
         </div>
-        <div className={tabPanelContainerStyle}>
+        <div className={getTabPanelContainerStyle(isMobile, isWideScreen)}>
           <AccountTab
             id={SettingsDialogExtendedKey.ACCOUNT}
             onOpenChange={props.onOpenChange}

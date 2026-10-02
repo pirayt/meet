@@ -103,3 +103,12 @@ html:has(.lk-video-conference) {
   opacity: 1;
   pointer-events: auto;
 }
+
+/* On phones the 360px side panel plus its margins overflows the viewport:
+   stretch it to the full width with a thin gutter instead. */
+@media (max-width: 767px) {
+  :root {
+    --sizes-room-side-panel: calc(100vw - 1rem);
+    --sizes-room-side-panel-margin: 0.5rem;
+  }
+}

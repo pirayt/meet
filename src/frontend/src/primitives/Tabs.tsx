@@ -172,6 +172,9 @@ const StyledTabPanel = styled(RACTabPanel, {
       },
       md: {
         padding: '2rem',
+        mdDown: {
+          padding: '0.75rem',
+        },
       },
     },
   },

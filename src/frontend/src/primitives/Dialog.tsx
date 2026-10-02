@@ -55,12 +55,23 @@ const StyledRACDialog = styled(RACDialog, {
 const ModalContent = styled('div', {
   base: {
     margin: 'auto',
+    padding: '0',
+    display: 'flex',
+    flexDirection: 'column',
+    mdDown: {
+      width: '100%',
+      height: '100%',
+    },
   },
   variants: {
     size: {
       full: {
-        width: 'fit-content',
+        width: 'auto',
         maxWidth: '100%',
+        mdDown: {
+          width: '100%',
+          height: '100%',
+        },
       },
       large: {
         width: '100%',
@@ -124,13 +135,34 @@ export const Dialog = ({
           {({ close }) => (
             <VerticallyOffCenter>
               <ModalContent size={size}>
-                <Div margin="1rem" pointerEvents="auto">
+                <Div
+                  margin="1rem"
+                  pointerEvents="auto"
+                  className={css({
+                    display: 'flex',
+                    flexDirection: 'column',
+                    mdDown: {
+                      margin: '0',
+                      width: '100%',
+                      height: '100%',
+                    },
+                  })}
+                >
                   <Box
                     size="sm"
                     type={boxType}
                     ref={innerRef}
                     className={css({
                       padding: '1.5rem',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      mdDown: {
+                        padding: '0.5rem',
+                        width: '100%',
+                        height: '100%',
+                        flex: 1,
+                        overflow: 'hidden',
+                      },
                     })}
                   >
                     {!!title && (

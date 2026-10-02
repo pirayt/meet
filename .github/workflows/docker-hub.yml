@@ -64,7 +64,7 @@ jobs:
           context: .
           target: backend-production
           platforms: ${{ env.BUILD_PLATFORMS }}
-          build-args: DOCKER_USER=${{ env.DOCKER_USER }}:-1000
+          build-args: DOCKER_USER=${{ env.DOCKER_USER }}
           push: ${{ github.event_name != 'pull_request' || startsWith(github.head_ref, 'integration/') }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
@@ -111,7 +111,7 @@ jobs:
           file: ./src/frontend/Dockerfile
           target: frontend-production
           platforms: ${{ env.BUILD_PLATFORMS }}
-          build-args: DOCKER_USER=${{ env.DOCKER_USER }}:-1000
+          build-args: DOCKER_USER=${{ env.DOCKER_USER }}
           push: ${{ github.event_name != 'pull_request' || startsWith(github.head_ref, 'integration/') }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
@@ -158,7 +158,7 @@ jobs:
           file: ./docker/dinum-frontend/Dockerfile
           target: frontend-production
           platforms: ${{ env.BUILD_PLATFORMS }}
-          build-args: DOCKER_USER=${{ env.DOCKER_USER }}:-1000
+          build-args: DOCKER_USER=${{ env.DOCKER_USER }}
           push: ${{ github.event_name != 'pull_request' || startsWith(github.head_ref, 'integration/') }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
@@ -207,7 +207,7 @@ jobs:
           file: ./src/summary/Dockerfile
           target: production
           platforms: ${{ env.BUILD_PLATFORMS }}
-          build-args: DOCKER_USER=${{ env.DOCKER_USER }}:-1000
+          build-args: DOCKER_USER=${{ env.DOCKER_USER }}
           push: ${{ github.event_name != 'pull_request' || startsWith(github.head_ref, 'integration/') }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
@@ -256,7 +256,7 @@ jobs:
           file: ./src/agents/Dockerfile
           target: production
           platforms: ${{ env.BUILD_PLATFORMS }}
-          build-args: DOCKER_USER=${{ env.DOCKER_USER }}:-1000
+          build-args: DOCKER_USER=${{ env.DOCKER_USER }}
           push: ${{ github.event_name != 'pull_request' || startsWith(github.head_ref, 'integration/') }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

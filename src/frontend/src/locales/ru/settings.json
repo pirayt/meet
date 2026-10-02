@@ -1,0 +1,193 @@
+{
+  "account": {
+    "currentlyLoggedAs": "Вы вошли как <0>{{user}}</0>",
+    "heading": "Аккаунт",
+    "youAreNotLoggedIn": "Вы не вошли в аккаунт.",
+    "nameLabel": "Ваше имя",
+    "authentication": "Вход в аккаунт",
+    "nameError": "Имя не может быть пустым"
+  },
+  "preferences": {
+    "title": "Предпочтения",
+    "idleDisconnectModal": {
+      "label": "Выходить из встречи, если в ней никого нет",
+      "description": "Вы автоматически выйдете из встречи через несколько минут, если к ней никто не присоединится"
+    },
+    "autoMuteLargeRoom": {
+      "label": "Автоматически выключать мой микрофон",
+      "description": "Микрофон будет выключаться автоматически, когда вы входите в большую встречу."
+    }
+  },
+  "audio": {
+    "microphone": {
+      "heading": "Микрофон",
+      "label": "Выберите микрофон",
+      "disabled": "Микрофон выключен"
+    },
+    "noiseReduction": {
+      "label": "Улучшенная обработка голоса",
+      "heading": "Аудиофильтры",
+      "ariaLabel": {
+        "enable": "Включить шумоподавление",
+        "disable": "Выключить шумоподавление"
+      }
+    },
+    "speakers": {
+      "heading": "Динамики",
+      "label": "Выберите устройство вывода звука",
+      "test": "Проверить",
+      "ongoingTest": "Проверка звука…",
+      "safariWarning": "В Safari пока нельзя выбрать динамики из-за ограничений браузера."
+    },
+    "permissionsRequired": "Требуется разрешение"
+  },
+  "video": {
+    "camera": {
+      "heading": "Камера",
+      "label": "Выберите камеру",
+      "disabled": "Камера выключена",
+      "previewAriaLabel": {
+        "enabled": "Предпросмотр видео включён",
+        "disabled": "Предпросмотр видео выключен"
+      }
+    },
+    "resolution": {
+      "heading": "Качество видео",
+      "publish": {
+        "label": "Качество отправляемого видео (макс.)",
+        "items": {
+          "veryHigh": "Очень высокое качество",
+          "high": "Высокое качество",
+          "medium": "Стандартное качество",
+          "low": "Низкое качество"
+        }
+      },
+      "subscribe": {
+        "label": "Качество получаемого видео (макс.)",
+        "items": {
+          "high": "Высокое качество (автоматически)",
+          "medium": "Стандартное качество",
+          "low": "Низкое качество"
+        }
+      }
+    },
+    "permissionsRequired": "Требуется разрешение"
+  },
+  "transcription": {
+    "heading": "Расшифровка",
+    "language": {
+      "label": "Язык встречи",
+      "options": {
+        "french": "Французский (fr)",
+        "english": "Английский (en)",
+        "dutch": "Нидерландский (nl)",
+        "german": "Немецкий (de)",
+        "auto": "Автоматически"
+      }
+    }
+  },
+  "notifications": {
+    "heading": "Звуковые уведомления",
+    "label": "звуковые уведомления о событии",
+    "actions": {
+      "disable": "Выключить",
+      "enable": "Включить"
+    },
+    "items": {
+      "participantJoined": {
+        "label": "Участник присоединился"
+      },
+      "handRaised": {
+        "label": "Поднята рука"
+      },
+      "messageReceived": {
+        "label": "Новое сообщение"
+      },
+      "participantWaiting": {
+        "label": "Участник в зале ожидания"
+      }
+    }
+  },
+  "shortcuts": {
+    "listLabel": "Сочетания клавиш",
+    "columnAction": "Действие",
+    "columnShortcut": "Сочетание клавиш"
+  },
+  "dialog": {
+    "heading": "Настройки"
+  },
+  "language": {
+    "heading": "Язык",
+    "label": "Язык"
+  },
+  "settingsButtonLabel": "Настройки",
+  "accessibility": {
+    "announceReactions": {
+      "label": "Озвучивать реакции"
+    },
+    "font": {
+      "label": "Шрифт интерфейса",
+      "description": "Выберите шрифт, который вам удобнее читать.",
+      "options": {
+        "default": "По умолчанию",
+        "lexend": "Lexend (удобнее читать)",
+        "atkinson-hyperlegible": "Atkinson Hyperlegible (для слабовидящих)",
+        "opendyslexic": "OpenDyslexic (при дислексии)"
+      }
+    },
+    "captions": {
+      "heading": "Субтитры",
+      "textSize": {
+        "label": "Размер текста субтитров",
+        "options": {
+          "small": "Маленький",
+          "medium": "Средний",
+          "large": "Крупный"
+        }
+      },
+      "fontColor": {
+        "label": "Цвет текста",
+        "options": {
+          "default": "По умолчанию",
+          "white": "Белый",
+          "black": "Чёрный",
+          "blue": "Синий",
+          "green": "Зелёный",
+          "red": "Красный",
+          "yellow": "Жёлтый",
+          "cyan": "Голубой",
+          "magenta": "Пурпурный"
+        }
+      },
+      "backgroundColor": {
+        "label": "Цвет фона",
+        "options": {
+          "default": "По умолчанию",
+          "white": "Белый",
+          "black": "Чёрный",
+          "blue": "Синий",
+          "green": "Зелёный",
+          "red": "Красный",
+          "yellow": "Жёлтый",
+          "cyan": "Голубой",
+          "magenta": "Пурпурный"
+        }
+      }
+    }
+  },
+  "tabs": {
+    "account": "Профиль",
+    "audio": "Звук",
+    "video": "Видео",
+    "general": "Общие",
+    "notifications": "Уведомления",
+    "accessibility": "Специальные возможности",
+    "transcription": "Расшифровка",
+    "shortcuts": "Сочетания клавиш",
+    "rooms": "Встречи"
+  },
+  "roomDefaults": {
+    "heading": "Настройки встреч по умолчанию",
+    "description": "Выберите настройки по умолчанию для новых встреч, которые вы создаёте. Для каждой встречи их всё равно можно изменить в настройках организатора."
+  }
+}

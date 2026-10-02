@@ -1,0 +1,62 @@
+{
+  "backToHome": "На главную",
+  "cancel": "Отмена",
+  "closeDialog": "Закрыть окно",
+  "error": {
+    "heading": "При загрузке страницы произошла ошибка"
+  },
+  "feedback": {
+    "context": "Ваши отзывы помогают нам становиться лучше!",
+    "cta": "Оставить отзыв — новая вкладка"
+  },
+  "forbidden": {
+    "heading": "У вас нет доступа к этой странице"
+  },
+  "loading": "Загрузка…",
+  "loggedInUserTooltip": "Вы вошли как ",
+  "login": {
+    "buttonLabel": "Войти",
+    "proconnectButtonLabel": "Войти через ProConnect",
+    "proconnectLinkLabel": "Что такое ProConnect? — новая вкладка",
+    "proconnectLink": "Что такое ProConnect?"
+  },
+  "logout": "Выйти из аккаунта",
+  "notFound": {
+    "heading": "Проверьте код встречи",
+    "body": "Убедитесь, что код встречи в адресе страницы указан правильно. Пример:"
+  },
+  "selected": "выбрано",
+  "submit": "ОК",
+  "footer": {
+    "links": {
+      "legifrance": "legifrance.gouv.fr",
+      "infogouv": "info.gouv.fr",
+      "servicepublic": "service-public.fr",
+      "datagouv": "data.gouv.fr",
+      "legalsTerms": "Правовая информация",
+      "data": "Персональные данные и cookie-файлы",
+      "accessibility": "Доступность: не соответствует требованиям",
+      "connectionTest": "Проверить подключение",
+      "ariaLabel": "новое окно",
+      "codeAnnotation": "Наш код открыт и доступен в",
+      "code": "репозитории с открытым исходным кодом",
+      "technicalDetails": "Техническое описание",
+      "termsOfService": "Условия использования"
+    },
+    "mentions": "Если не указано иное, материалы сайта доступны по",
+    "license": "лицензии etalab 2.0"
+  },
+  "loginHint": {
+    "title": "Войдите в аккаунт",
+    "body": "Чтобы не ждать, войдите в свой аккаунт.",
+    "button": {
+      "ariaLabel": "Закрыть подсказку",
+      "label": "ОК"
+    }
+  },
+  "skipLink": "Перейти к основному содержимому",
+  "clipboardContent": {
+    "url": "Чтобы присоединиться к видеовстрече, перейдите по ссылке: {{roomUrl}}",
+    "numberAndPin": "Чтобы подключиться по телефону, позвоните по номеру {{phoneNumber}} и введите код: {{pinCode}}"
+  }
+}

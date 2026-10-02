@@ -59,8 +59,8 @@ if have docker; then
   done
 
   section "LiveKit server version"
-  for c in $($DOCKER ps --format '{{.Names}} {{.Image}}' | awk '/livekit/ && !/egress|ingress|sip/ {print $1}'); do
-    echo "$c: $($DOCKER exec "$c" livekit-server --version 2>/dev/null || echo '(could not query)')"
+  for c in $($DOCKER ps --format '{{.Names}} {{.Image}}' | awk '/livekit-server/ {print $1}'); do
+    echo "$c: $($DOCKER exec "$c" /livekit-server --version 2>/dev/null || echo '(could not query)')"
   done
 fi
 
